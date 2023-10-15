@@ -26,6 +26,8 @@ Monty byte code files bear the .m extension, an industry norm but not a language
 
 ## Monty Interpreter Testing
 
+Take these tests and unlock the power of Monty bytecode in your coding journey! 🛣️🚶🚶‍♂️🚶‍♀️
+
 ### Testing LIFO Magic
 
 1. Create a new Monty script file named `lifo_test.m` and open it with your favorite text editor.
@@ -71,8 +73,6 @@ Monty byte code files bear the .m extension, an industry norm but not a language
     ```
 
 ### Journey into Error Realms
-
-Take these tests and unlock the power of Monty bytecode in your coding journey! 🛣️🚶🚶‍♂️🚶‍♀️
 
 1. Forge a Monty script called error_test.m and let your code adventures begin.
 2. Insert the following Monty bytecode in your script:
