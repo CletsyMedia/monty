@@ -72,6 +72,14 @@ Take these tests and unlock the power of Monty bytecode in your coding journey! 
     ./monty fifo_test.m
     ```
 
+4. Behold the enchantment as it reveals the values in FIFO (First In, First Out) order:
+
+    ```plaintext
+    1
+    2
+    3
+    ```
+
 ### Journey into Error Realms
 
 1. Forge a Monty script called error_test.m and let your code adventures begin.
@@ -86,6 +94,10 @@ Take these tests and unlock the power of Monty bytecode in your coding journey! 
 4. Cast the Monty interpreter spell on the script: `./monty error_test.m`
 5. Witness the incantation's consequences as it dances with errors, unraveling the mysteries of error handling.
 
+    ```javascript
+    Error: Can't pop an empty stack
+    ```
+
 ### Code Optimization Quest
 
 1. Embark on an epic code optimization quest with a script named `optimize_test.m`
@@ -93,13 +105,18 @@ Take these tests and unlock the power of Monty bytecode in your coding journey! 
 
     ```javascript
     push 5
-    pop
+    push 10
+    mul
+    pall
     ```
 
 3. Save your script
 4. Open your terminal, and set the Monty interpreter on the script: `./monty optimize_test.m`
 5. Experience the results as Monty's magic optimizes your code and leaves you in awe.
 
+    ```javascript
+    50
+    ```
 
 ## Contact
 
