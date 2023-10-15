@@ -52,6 +52,55 @@ Monty byte code files bear the .m extension, an industry norm but not a language
     1
     ```
 
+### Unleashing FIFO Sorcery
+
+1. Create another Monty script file named `fifo_test.m` and open it with your mystical text editor.
+2. Craft the following Monty bytecode incantation:
+
+    ```plaintext
+    push 1
+    push 2
+    push 3
+    pall
+    ```
+
+3. Open your terminal and command the Monty interpreter to read the script.
+
+    ```plaintext
+    ./monty fifo_test.m
+    ```
+
+### Journey into Error Realms
+
+Take these tests and unlock the power of Monty bytecode in your coding journey! 🛣️🚶🚶‍♂️🚶‍♀️
+
+1. Forge a Monty script called error_test.m and let your code adventures begin.
+2. Insert the following Monty bytecode in your script:
+
+    ```plaintext
+    pop
+    pchar
+    ```
+
+3. Save the script and release your text editor for a moment.
+4. Cast the Monty interpreter spell on the script: `./monty error_test.m`
+5. Witness the incantation's consequences as it dances with errors, unraveling the mysteries of error handling.
+
+### Code Optimization Quest
+
+1. Embark on an epic code optimization quest with a script named `optimize_test.m`
+2. Channel your knowledge into this Monty bytecode masterpiece
+
+    ```javascript
+    push 5
+    pop
+    ```
+
+3. Save your script
+4. Open your terminal, and set the Monty interpreter on the script: `./monty optimize_test.m`
+5. Experience the results as Monty's magic optimizes your code and leaves you in awe.
+
+
 ## Contact
 
 For queries, echoes, and thoughts that bloom and fuss, don't hesitate to connect, in our haven. [Cletus Samuel](https://cletsymedia.github.io/Prof-Portfolio/) and [Amanda Obi](https://github.com/ObiChika)🙏🙏🙏🙏🙏🙏🙏
