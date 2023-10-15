@@ -2,7 +2,7 @@
 
 ![LIFO-FIFO](https://thumbs.dreamstime.com/b/lifo-fifo-last-first-out-symbol-changes-concept-words-lifo-to-fifo-wooden-blocks-beautiful-grey-table-grey-background-243406275.jpg)
 
-## introduction
+## Introduction
 
 Welcome to the Monty Bytecode Collaboration, where code and creativity intertwine. Inspired by Monty Python's whimsy and the magic of bytecode, our journey invites you to explore your computer's inner symphony with grace.
 
