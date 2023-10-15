@@ -2,16 +2,24 @@
 
 ![LIFO-FIFO](https://thumbs.dreamstime.com/b/lifo-fifo-last-first-out-symbol-changes-concept-words-lifo-to-fifo-wooden-blocks-beautiful-grey-table-grey-background-243406275.jpg)
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Monty bytecode](#monty-bytecode-files)
+- [Objectives](#objectives)
+- [Monty Interpreter Testing](#monty-interpreter-testing)
+- [Contact](#contact)
+
 ## Introduction
 
 Welcome to Monty 0.98, a script language akin to Python, employing Monty bytecodes. It orchestrates an exclusive stack structure, guided by specialized instructions, creating a melodious blend of code and innovation in a compact, stack-based realm.
 Join us on this collaborative odyssey, where we unravel the secrets of Monty bytecode, combining simplicity and ingenuity. Together, we compose a digital sonnet, crafting a world where code and creativity unite in open-source harmony.
 
-## Monty byte code files
+## Monty bytecode files
 
 Monty byte code files bear the .m extension, an industry norm but not a language requirement. Each line in these files features a single instruction, allowing flexible spacing around the opcode and its argument. More details and examples can be found in the examples section.
 
-## 🌟 Objectives
+## Objectives
 
 - 🧐 Unravel the mysteries of LIFO (Last In, First Out) and FIFO (First In, First Out) like a Monty magician.
 - 📚 Grasp the essence of stacks and their ideal use cases, letting you wield their power with finesse.
@@ -27,6 +35,8 @@ Monty byte code files bear the .m extension, an industry norm but not a language
 ## Monty Interpreter Testing
 
 Take these tests and unlock the power of Monty bytecode in your coding journey! 🛣️🚶🚶‍♂️🚶‍♀️
+
+<details>
 
 ### Testing LIFO Magic
 
@@ -117,6 +127,8 @@ Take these tests and unlock the power of Monty bytecode in your coding journey! 
     ```javascript
     50
     ```
+
+</details>
 
 ## Contact
 
