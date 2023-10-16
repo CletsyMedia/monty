@@ -7,7 +7,8 @@
 - [Introduction](#introduction)
 - [Monty bytecode](#monty-bytecode-files)
 - [Features](#features)
-- [Compilation](#compilation)
+- [Features](#features)
+- [Resources](#resources)
 - [Monty Interpreter Testing](#monty-interpreter-testing)
 - [Limitations](#limitations)
 - [Contact](#contact)
@@ -33,6 +34,14 @@ Monty byte code files bear the .m extension, an industry norm but not a language
 - 🌌 Traverse the universe of memory allocation, dancing through its intricate steps with elegance.
 - 🪄 Weave the threads of error handling into your code tapestry, ensuring Monty's reliability.
 - 🚀 Embark on an epic journey in code optimization, unlocking Monty's hidden powers and making your spells more potent with each enchanting line.
+
+## Resources
+
+- In Monty's journey, where code dreams gleam, these resources hold the keys to a stack and queue's theme.
+
+[Stack and Queues](https://www.geeksforgeeks.org/difference-between-stack-and-queue-data-structures/)
+
+[Everything Stack-Queues](https://everythingcomputerscience.com/discrete_mathematics/Stacks_and_Queues.html)
 
 ## Compilation
 
