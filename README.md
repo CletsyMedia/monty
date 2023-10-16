@@ -9,6 +9,7 @@
 - [Features](#features)
 - [Compilation](#compilation)
 - [Monty Interpreter Testing](#monty-interpreter-testing)
+- [Limitations](#limitations)
 - [Contact](#contact)
 
 ## Introduction
