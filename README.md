@@ -6,7 +6,8 @@
 
 - [Introduction](#introduction)
 - [Monty bytecode](#monty-bytecode-files)
-- [Objectives](#objectives)
+- [Features](#features)
+- [Compilation](#compilation)
 - [Monty Interpreter Testing](#monty-interpreter-testing)
 - [Contact](#contact)
 
@@ -19,7 +20,7 @@ Join us on this collaborative odyssey, where we unravel the secrets of Monty byt
 
 Monty byte code files bear the .m extension, an industry norm but not a language requirement. Each line in these files features a single instruction, allowing flexible spacing around the opcode and its argument. More details and examples can be found in the examples section.
 
-## Objectives
+## Features
 
 - 🧐 Unravel the mysteries of LIFO (Last In, First Out) and FIFO (First In, First Out) like a Monty magician.
 - 📚 Grasp the essence of stacks and their ideal use cases, letting you wield their power with finesse.
@@ -32,13 +33,22 @@ Monty byte code files bear the .m extension, an industry norm but not a language
 - 🪄 Weave the threads of error handling into your code tapestry, ensuring Monty's reliability.
 - 🚀 Embark on an epic journey in code optimization, unlocking Monty's hidden powers and making your spells more potent with each enchanting line.
 
+## Compilation
+
+- To weave this symphony, with lines of code we cast and compile with precision using this spells:
+
+    ```bash
+    cd monty
+    gcc -Wall -Werror -Wextra -pedantic -std=c89 *.c -o monty
+    ```
+
 ## Monty Interpreter Testing
 
 Take these tests and unlock the power of Monty bytecode in your coding journey! 🛣️🚶🚶‍♂️🚶‍♀️
 
 <details>
 
-### Testing LIFO Magic
+<summary><strong>Testing LIFO Magic</strong></summary>
 
 1. Create a new Monty script file named `lifo_test.m` and open it with your favorite text editor.
 2. Add the following Monty bytecode to the script:
@@ -129,6 +139,22 @@ Take these tests and unlock the power of Monty bytecode in your coding journey! 
     ```
 
 </details>
+
+## Limitations
+
+In the evolving world of Monty's dream, where code adventures gleam, amidst its grace, acknowledge the boundaries of this code scheme:
+
+1. **Limited Feature Set:** The Monty interpreter may not offer the extensive feature set of more mature languages or interpreters. Advanced or specialized functionalities might be absent.
+
+2. **Error Handling:** Error handling in Monty might not be as comprehensive as in established languages, which could lead to unexpected behavior or error messages.
+
+3. **Compatibility:** Monty may not be compatible with all systems or platforms, potentially resulting in compatibility issues on certain operating systems.
+
+4. **Performance:** Due to its minimalistic design, certain operations within Monty might exhibit slower performance compared to highly optimized languages or interpreters.
+
+5. **Bugs and Incompleteness:** Monty might have unresolved bugs or areas where certain features are incomplete. Users should be aware that it's a work in progress and an educational project.
+
+For every challenge we encounter, an opportunity to refine and explore, in the hands of fellow coders, Monty's potential we implore. As the project evolves, we welcome contributions from fellow adventurers to address these limitations.
 
 ## Contact
 
