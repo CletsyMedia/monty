@@ -47,3 +47,28 @@ void _pchar_f(stack_t **head, unsigned int count)
 }
 
 
+/**
+ * _pstring_f - Prints a string of characters from the stack.
+ * @head: Pointer to the stack's head
+ * @count: Line number (unused)
+ *
+ * Description:
+ * This function interprets the integers on the stack as ASCII values and
+ * prints characters until it encounters a 0 (null byte), a character value
+ * out of range, or the stack becomes empty. It prints the characters in the
+ * stack as a string.
+ *
+ * Return: No return value
+ */
+void _pstring_f(stack_t **head, unsigned int count)
+{
+	stack_t *h;
+	(void)count;
+
+	for (h = *head; h && (h->n != 0 && h->n <= 127 && h->n > 0); h = h->next)
+	{
+	printf("%c", h->n);
+	}
+
+	printf("\n");
+}
