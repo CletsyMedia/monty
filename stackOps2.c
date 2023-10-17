@@ -100,4 +100,52 @@ void _divide_f(stack_t **head, unsigned int count)
 	free(h);	/* Free the previous top node */
 }
 
+/**
+ * _modulus_f - Computes the modulus of the top two elements of the stack.
+ * @head: Pointer to the stack's head
+ * @count: Line number for error reporting
+ *
+ * Description:
+ * This function calculates the modulus of the top two elements of the stack.
+ * If the stack is too short or if division by zero is attempted, it prints an
+ * error message and exits the program.
+ *
+ * Return: No return value
+ */
+void _modulus_f(stack_t **head, unsigned int count)
+{
+	int length = 0;
+	stack_t *h;
+
+	for (h = *head; h; h = h->next)
+	{
+	length++;
+	}
+
+	if (length < 2)
+	{
+	fprintf(stderr, "L%d: Error: Stack too short for mod operation\n", count);
+	fclose(bus.file);
+	free(bus.cont);
+	freeing_stack(*head);
+	exit(EXIT_FAILURE);
+	}
+
+	h = *head;
+
+	if (h->n == 0)
+	{
+	fprintf(stderr, "L%d: Error: Division by zero is not allowed\n", count);
+	fclose(bus.file);
+	free(bus.cont);
+	freeing_stack(*head);
+	exit(EXIT_FAILURE);
+	}
+
+	int auxil = h->next->n % h->n;
+
+	h->next->n = auxil;
+	*head = h->next;
+	free(h);
+}
 
