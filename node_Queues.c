@@ -111,6 +111,6 @@ void _stacking_f(stack_t **head, unsigned int count)
 	(void)head;
 
 	(void)count;
-  
+
 	bus.lifi = 0;
 }
