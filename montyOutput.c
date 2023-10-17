@@ -74,3 +74,34 @@ void _pstring_f(stack_t **head, unsigned int count)
 }
 
 
+/**
+ * _rotateT_f - Rotate the stack to the top.
+ * @head: Pointer to the stack's head
+ * @count: Line number (unused)
+ *
+ * Description:
+ * This function rotates the stack to the top, moving the bottom element
+ * to the top of the stack.
+ *
+ * Return: No return value
+ */
+void _rotateT_f(stack_t **head, __attribute__((unused)) unsigned int count)
+{
+	if (*head == NULL || (*head)->next == NULL)
+	{
+	return;
+	}
+
+	stack_t *cpy = *head;
+
+	while (cpy->next)
+	{
+	cpy = cpy->next;
+	}
+
+	cpy->next = *head;
+	cpy->prev->next = NULL;
+	cpy->prev = NULL;
+	(*head)->prev = cpy;
+	(*head) = cpy;
+}
