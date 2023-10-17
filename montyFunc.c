@@ -15,39 +15,39 @@
  */
 void _pushing_f(stack_t **head, unsigned int count)
 {
-	int a, b = 0, flag = 0;
+  int a, b = 0, flag = 0;
 
-	if (bus.arg)
-	{
-	if (bus.arg[0] == '-')
-	b++;
-	for (; bus.arg[b] != '\0'; b++)
-	{
-	if (bus.arg[b] > '9' || bus.arg[b] < '0')
-	flag = 1;
-	}
-	if (flag == 1)
-	{
-	fprintf(stderr, "L%d: Usage: Pushing integer\n", count);
-	fclose(bus.file);
-	free(bus.cont);
-	freeing_stack(*head);
-	exit(EXIT_FAILURE);
-	}
-	}
-	else
-	{
-	fprintf(stderr, "L%d: Usage: Pushing integer\n", count);
-	fclose(bus.file);
-	free(bus.cont);
-	freeing_stack(*head);
-	exit(EXIT_FAILURE);
-	}
-	a = atoi(bus.arg);
-	if (bus.lifi == 0)
-	_adding_node(head, a);
-	else
-	_adding_queue(head, a);
+  if (bus.arg)
+  {
+    if (bus.arg[0] == '-')
+      b++;
+    for (; bus.arg[b] != '\0'; b++)
+    {
+      if (bus.arg[b] > '9' || bus.arg[b] < '0')
+        flag = 1;
+    }
+    if (flag == 1)
+    {
+      fprintf(stderr, "L%d: Usage: Pushing integer\n", count);
+      fclose(bus.file);
+      free(bus.cont);
+      freeing_stack(*head);
+      exit(EXIT_FAILURE);
+    }
+  }
+  else
+  {
+    fprintf(stderr, "L%d: Usage: Pushing integer\n", count);
+    fclose(bus.file);
+    free(bus.cont);
+    freeing_stack(*head);
+    exit(EXIT_FAILURE);
+  }
+  a = atoi(bus.arg);
+  if (bus.lifi == 0)
+    _adding_node(head, a);
+  else
+    _adding_queue(head, a);
 }
 
 /**
@@ -64,11 +64,42 @@ void _pushing_f(stack_t **head, unsigned int count)
  */
 void _printall_f(stack_t **head, unsigned int count)
 {
-	stack_t *h;
-	(void)count;
+  stack_t *h;
+  (void)count;
 
-	for (h = *head; h; h = h->next)
-	{
-	printf("%d\n", h->n);
-	}
+  for (h = *head; h; h = h->next)
+  {
+    printf("%d\n", h->n);
+  }
+}
+
+/**
+ * _pinteger_f - Prints the integer at the top of the stack.
+ * @head: Pointer to the stack's head
+ * @count: Line number for error reporting
+ *
+ * Description:
+ * This function prints the integer value at the top of the stack. It checks
+ * for an empty stack and handles the error accordingly.
+ *
+ * Return: No return value
+ */
+void _pinteger_f(stack_t **head, unsigned int count)
+{
+  if (*head == NULL)
+  {
+    /* If the stack is empty, print an error message and clean up resources.*/
+    fprintf(stderr, "L%u: Can't print integer, stack empty\n", count);
+
+    fclose(bus.file); /* Close the Monty script file. */
+
+    free(bus.cont); /* Free the line content. */
+
+    freeing_stack(*head); /* Free the stack memory. */
+
+    exit(EXIT_FAILURE);
+  }
+
+  /* Print the integer at the top of the stack. */
+  printf("%d\n", (*head)->n);
 }
