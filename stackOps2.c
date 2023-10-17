@@ -149,3 +149,44 @@ void _modulus_f(stack_t **head, unsigned int count)
 	free(h);
 }
 
+/**
+ * _multiply_f - Multiplies the top two elements of the stack.
+ * @head: Pointer to the stack's head
+ * @count: Line number for error reporting
+ *
+ * Description:
+ * This function multiplies the top two elements of the stack. If the stack is
+ * too short, it prints an error message and exits the program.
+ *
+ * Return: No return value
+ */
+void _multiply_f(stack_t **head, unsigned int count)
+{
+	stack_t *h;
+	int length = 0;
+
+	for (h = *head; h; h = h->next)
+	{
+	length++;
+	}
+
+	if (length < 2)
+	{
+	fprintf(stderr, "L%d: Error: Stack too short for multiplication\n", count);
+
+	fclose(bus.file);
+
+	free(bus.cont);
+
+	freeing_stack(*head);
+	exit(EXIT_FAILURE);
+	}
+
+	h = *head;
+	int auxil = h->next->n * h->n;
+
+	h->next->n = auxil;
+	*head = h->next;
+	free(h);
+}
+
