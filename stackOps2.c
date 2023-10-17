@@ -99,3 +99,5 @@ void _divide_f(stack_t **head, unsigned int count)
 	*head = h->next;	/* Update the head to point to the new top */
 	free(h);	/* Free the previous top node */
 }
+
+
