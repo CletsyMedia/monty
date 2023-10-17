@@ -15,39 +15,39 @@
  */
 void _pushing_f(stack_t **head, unsigned int count)
 {
-  int a, b = 0, flag = 0;
+	int a, b = 0, flag = 0;
 
-  if (bus.arg)
-  {
-    if (bus.arg[0] == '-')
-      b++;
-    for (; bus.arg[b] != '\0'; b++)
-    {
-      if (bus.arg[b] > '9' || bus.arg[b] < '0')
-        flag = 1;
-    }
-    if (flag == 1)
-    {
-      fprintf(stderr, "L%d: Usage: Pushing integer\n", count);
-      fclose(bus.file);
-      free(bus.cont);
-      freeing_stack(*head);
-      exit(EXIT_FAILURE);
-    }
-  }
-  else
-  {
-    fprintf(stderr, "L%d: Usage: Pushing integer\n", count);
-    fclose(bus.file);
-    free(bus.cont);
-    freeing_stack(*head);
-    exit(EXIT_FAILURE);
-  }
-  a = atoi(bus.arg);
-  if (bus.lifi == 0)
-    _adding_node(head, a);
-  else
-    _adding_queue(head, a);
+	if (bus.arg)
+	{
+	if (bus.arg[0] == '-')
+	b++;
+	for (; bus.arg[b] != '\0'; b++)
+	{
+	if (bus.arg[b] > '9' || bus.arg[b] < '0')
+	flag = 1;
+	}
+	if (flag == 1)
+	{
+	fprintf(stderr, "L%d: Usage: Pushing integer\n", count);
+	fclose(bus.file);
+	free(bus.cont);
+	freeing_stack(*head);
+	exit(EXIT_FAILURE);
+	}
+	}
+	else
+	{
+	fprintf(stderr, "L%d: Usage: Pushing integer\n", count);
+	fclose(bus.file);
+	free(bus.cont);
+	freeing_stack(*head);
+	exit(EXIT_FAILURE);
+	}
+	a = atoi(bus.arg);
+	if (bus.lifi == 0)
+	_adding_node(head, a);
+	else
+	_adding_queue(head, a);
 }
 
 /**
@@ -64,11 +64,11 @@ void _pushing_f(stack_t **head, unsigned int count)
  */
 void _printall_f(stack_t **head, unsigned int count)
 {
-  stack_t *h;
-  (void)count;
+	stack_t *h;
+	(void)count;
 
-  for (h = *head; h; h = h->next)
-  {
-    printf("%d\n", h->n);
-  }
+	for (h = *head; h; h = h->next)
+	{
+	printf("%d\n", h->n);
+	}
 }
