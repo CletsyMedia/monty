@@ -95,3 +95,22 @@ void _adding_queue(stack_t **head, int n)
 }
 
 
+/**
+ * _stacking_f - Sets the stack mode.
+ * @head: Pointer to the stack's head
+ * @count: Line number
+ *
+ * Description:
+ * This function sets the stack mode, which changes the behavior of the push
+ * operation to add elements to the front of the stack instead of the back.
+ *
+ * Return: No return value
+ */
+void _stacking_f(stack_t **head, unsigned int count)
+{
+	(void)head;
+
+	(void)count;
+  
+	bus.lifi = 0;
+}
