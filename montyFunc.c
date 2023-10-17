@@ -19,35 +19,35 @@ void _pushing_f(stack_t **head, unsigned int count)
 
 	if (bus.arg)
 	{
-	if (bus.arg[0] == '-')
-	b++;
-	for (; bus.arg[b] != '\0'; b++)
-	{
-	if (bus.arg[b] > '9' || bus.arg[b] < '0')
-	flag = 1;
-	}
-	if (flag == 1)
-	{
-	fprintf(stderr, "L%d: Usage: Pushing integer\n", count);
-	fclose(bus.file);
-	free(bus.cont);
-	freeing_stack(*head);
-	exit(EXIT_FAILURE);
-	}
+		if (bus.arg[0] == '-')
+			b++;
+		for (; bus.arg[b] != '\0'; b++)
+		{
+			if (bus.arg[b] > '9' || bus.arg[b] < '0')
+				flag = 1;
+		}
+		if (flag == 1)
+		{
+			fprintf(stderr, "L%d: Usage: Pushing integer\n", count);
+			fclose(bus.file);
+			free(bus.cont);
+			freeing_stack(*head);
+			exit(EXIT_FAILURE);
+		}
 	}
 	else
 	{
-	fprintf(stderr, "L%d: Usage: Pushing integer\n", count);
-	fclose(bus.file);
-	free(bus.cont);
-	freeing_stack(*head);
-	exit(EXIT_FAILURE);
+		fprintf(stderr, "L%d: Usage: Pushing integer\n", count);
+		fclose(bus.file);
+		free(bus.cont);
+		freeing_stack(*head);
+		exit(EXIT_FAILURE);
 	}
 	a = atoi(bus.arg);
 	if (bus.lifi == 0)
-	_adding_node(head, a);
+		_adding_node(head, a);
 	else
-	_adding_queue(head, a);
+		_adding_queue(head, a);
 }
 
 /**
@@ -69,7 +69,7 @@ void _printall_f(stack_t **head, unsigned int count)
 
 	for (h = *head; h; h = h->next)
 	{
-	printf("%d\n", h->n);
+		printf("%d\n", h->n);
 	}
 }
 
@@ -88,22 +88,21 @@ void _pinteger_f(stack_t **head, unsigned int count)
 {
 	if (*head == NULL)
 	{
-	/* If the stack is empty, print an error message and clean up resources.*/
-	fprintf(stderr, "L%u: Can't print integer, stack empty\n", count);
+		/* If the stack is empty, print an error message and clean up resources.*/
+		fprintf(stderr, "L%u: Can't print integer, stack empty\n", count);
 
-	fclose(bus.file); /* Close the Monty script file. */
+		fclose(bus.file); /* Close the Monty script file. */
 
-	free(bus.cont); /* Free the line content. */
+		free(bus.cont); /* Free the line content. */
 
-	freeing_stack(*head); /* Free the stack memory. */
+		freeing_stack(*head); /* Free the stack memory. */
 
-	exit(EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 
 	/* Print the integer at the top of the stack. */
 	printf("%d\n", (*head)->n);
 }
-
 
 /**
  * exec - Execute a Monty bytecode instruction.
@@ -123,14 +122,7 @@ void _pinteger_f(stack_t **head, unsigned int count)
 int exec(char *cont, stack_t **stack, unsigned int count, FILE *file)
 {
 	instructs_t opst[] = {
-			{"push", _pushing_f}, {"pall", _printall_f}, {"pint", _pinteger_f},
-			{"pop", _poping_f}, {"swap", _swaping_f}, {"add", _adding_f},
-			{"nop", no_ops}, {"sub", _subtract_f}, {"div", _divide_f},
-			{"mul", _multiply_f}, {"mod", _modulus_f}, {"pchar", _pchar_f},
-			{"pstr", _pstring_f}, {"rotl", _rotateT_f}, {"rotr", _rotateB_f},
-			{"queue", _queuing_f},
-			{"stack", _stacking_f},
-			{NULL, NULL}};
+			{"push", _pushing_f}, {"pall", _printall_f}, {"pint", _pinteger_f}, {"pop", _poping_f}, {"swap", _swaping_f}, {"add", _adding_f}, {"nop", no_ops}, {"sub", _subtract_f}, {"div", _divide_f}, {"mul", _multiply_f}, {"mod", _modulus_f}, {"pchar", _pchar_f}, {"pstr", _pstring_f}, {"rotl", _rotateT_f}, {"rotr", _rotateB_f}, {"queue", _queuing_f}, {"stack", _stacking_f}, {NULL, NULL}};
 
 	char *operand;
 	unsigned int a = 0;
@@ -160,4 +152,36 @@ int exec(char *cont, stack_t **stack, unsigned int count, FILE *file)
 	}
 
 	return (1);
+}
+
+/**
+ * _rotateT_f - Rotate the stack to the top.
+ * @head: Pointer to the stack's head
+ * @count: Line number (unused)
+ *
+ * Description:
+ * This function rotates the stack to the top, moving the bottom element
+ * to the top of the stack.
+ *
+ * Return: No return value
+ */
+void _rotateT_f(stack_t **head, __attribute__((unused)) unsigned int count)
+{
+	if (*head == NULL || (*head)->next == NULL)
+	{
+		return;
+	}
+
+	stack_t *cpy = *head;
+
+	while (cpy->next)
+	{
+		cpy = cpy->next;
+	}
+
+	cpy->next = *head;
+	cpy->prev->next = NULL;
+	cpy->prev = NULL;
+	(*head)->prev = cpy;
+	(*head) = cpy;
 }
