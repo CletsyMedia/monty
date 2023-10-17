@@ -7,7 +7,6 @@
 - [Introduction](#introduction)
 - [Monty bytecode](#monty-bytecode-files)
 - [Features](#features)
-- [Features](#features)
 - [Resources](#resources)
 - [Monty Interpreter Testing](#monty-interpreter-testing)
 - [Limitations](#limitations)
