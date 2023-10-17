@@ -33,11 +33,17 @@ void _pchar_f(stack_t **head, unsigned int count)
 	if (h->n > 127 || h->n < 0)
 	{
 	fprintf(stderr, "L%d: Error: Char value is out of range\n", count);
+
 	fclose(bus.file);
+
 	free(bus.cont);
+
 	freeing_stack(*head);
+
 	exit(EXIT_FAILURE);
 	}
 
 	printf("%c\n", h->n);
 }
+
+
