@@ -93,3 +93,5 @@ void _adding_queue(stack_t **head, int n)
 	newNode->prev = auxil;
 	auxil->next = newNode;
 }
+
+
