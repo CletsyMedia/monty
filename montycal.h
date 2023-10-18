@@ -1,7 +1,7 @@
 #ifndef _MONTYCAL_H
 #define _MONTYCAL_H
 
-/*#define _POSIX_C_SOURCE 200809L*/
+#define _POSIX_C_SOURCE 200809L
 
 #include <unistd.h> /* Provides access to POSIX operating system APIs */
 #include <stdlib.h> /* Contains declarations for general-purpose functions */

@@ -10,13 +10,13 @@ stack_t *head = NULL;
 
 int main(int argc, char *argv[])
 {
-  if (argc != 2)
-  {
-    fprintf(stderr, "USAGE: monty file\n");
-    exit(EXIT_FAILURE);
-  }
-  opening_file(argv[1]);
-  freeing_nodes();
-  return (0);
+	if (argc != 2)
+	{
+	fprintf(stderr, "USAGE: monty file\n");
+	exit(EXIT_FAILURE);
+	}
+	opening_file(argv[1]);
+	freeing_nodes();
+	return (0);
 }
 

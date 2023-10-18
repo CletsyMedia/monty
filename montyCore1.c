@@ -42,7 +42,7 @@ void addition(stack_t **stack, unsigned int line_number)
 	int add;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-	more_err(8, line_number, "add");
+	errors(8, line_number, "add");
 
 	(*stack) = (*stack)->next;
 	add = (*stack)->n + (*stack)->prev->n;
