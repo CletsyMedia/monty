@@ -43,26 +43,44 @@ typedef struct instruction_s
 extern stack_t *head;
 typedef void (*op_func)(stack_t **, unsigned int);
 
-/*file operations*/
-void opening_file(char *file_name);
-int parsing_line(char *buffer, int line_number, int format);
-void reading_file(FILE *);
-int length_chars(FILE *);
-void finding_func(char *, char *, int, int);
 
 /*Stack operations*/
 stack_t *creating_node(int n);
+
 void freeing_nodes(void);
+
 void printing_stack(stack_t **, unsigned int);
+
 void adding_to_stack(stack_t **, unsigned int);
+
 void adding_to_queue(stack_t **, unsigned int);
 
 void calling_func(op_func, char *, char *, int, int);
 
 void prnt_top(stack_t **, unsigned int);
+
 void poping(stack_t **, unsigned int);
+
 void no_op(stack_t **, unsigned int);
+
 void swapping(stack_t **, unsigned int);
+
+/*String operations*/
+void prnt_char(stack_t **, unsigned int);
+
+void prnt_str(stack_t **, unsigned int);
+
+void rotl(stack_t **, unsigned int);
+
+/*Error hanlding*/
+void error(int error_code, ...);
+
+void errors(int error_code, ...);
+
+void strng_error(int error_code, ...);
+
+void rotr(stack_t **, unsigned int);
+
 
 /*Math operations with nodes*/
 void addition(stack_t **, unsigned int);
@@ -71,15 +89,11 @@ void divide(stack_t **, unsigned int);
 void multiply(stack_t **, unsigned int);
 void modulus(stack_t **, unsigned int);
 
-/*String operations*/
-void prnt_char(stack_t **, unsigned int);
-void prnt_str(stack_t **, unsigned int);
-void rotl(stack_t **, unsigned int);
-
-/*Error hanlding*/
-void error(int error_code, ...);
-void errors(int error_code, ...);
-void strng_error(int error_code, ...);
-void rotr(stack_t **, unsigned int);
+/*file operations*/
+void opening_file(char *file_name);
+int parsing_line(char *buffer, int line_number, int format);
+void reading_file(FILE *);
+int length_chars(FILE *);
+void finding_func(char *, char *, int, int);
 
 #endif /* _MONTYCAL_H */
