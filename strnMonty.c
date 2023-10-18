@@ -7,15 +7,15 @@
  */
 void prnt_char(stack_t **stack, unsigned int line_number)
 {
-  int ansi;
+	int ansi;
 
-  if (stack == NULL || *stack == NULL)
-    strng_error(11, line_number);
+	if (stack == NULL || *stack == NULL)
+	strng_error(11, line_number);
 
-  ansi = (*stack)->n;
-  if (ansi < 0 || ansi > 127)
-    strng_error(10, line_number);
-  printf("%c\n", ansi);
+	ansi = (*stack)->n;
+	if (ansi < 0 || ansi > 127)
+	strng_error(10, line_number);
+	printf("%c\n", ansi);
 }
 
 /**
@@ -25,25 +25,25 @@ void prnt_char(stack_t **stack, unsigned int line_number)
  */
 void prnt_str(stack_t **stack, __attribute__((unused)) unsigned int ln)
 {
-  stack_t *temp;
-  int ansi;
+	stack_t *temp;
+	int ansi;
 
-  if (stack == NULL || *stack == NULL)
-  {
-    printf("\n");
-    return;
-  }
+	if (stack == NULL || *stack == NULL)
+	{
+	printf("\n");
+	return;
+	}
 
-  temp = *stack;
-  while (temp != NULL)
-  {
-    ansi = temp->n;
-    if (ansi <= 0 || ansi > 127)
-      break;
-    printf("%c", ansi);
-    temp = temp->next;
-  }
-  printf("\n");
+	temp = *stack;
+	while (temp != NULL)
+	{
+	ansi = temp->n;
+	if (ansi <= 0 || ansi > 127)
+	break;
+	printf("%c", ansi);
+	temp = temp->next;
+	}
+	printf("\n");
 }
 
 /**
@@ -53,20 +53,20 @@ void prnt_str(stack_t **stack, __attribute__((unused)) unsigned int ln)
  */
 void rotl(stack_t **stack, __attribute__((unused)) unsigned int ln)
 {
-  stack_t *temp;
+	stack_t *temp;
 
-  if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-    return;
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+	return;
 
-  temp = *stack;
-  while (temp->next != NULL)
-    temp = temp->next;
+	temp = *stack;
+	while (temp->next != NULL)
+	temp = temp->next;
 
-  temp->next = *stack;
-  (*stack)->prev = temp;
-  *stack = (*stack)->next;
-  (*stack)->prev->next = NULL;
-  (*stack)->prev = NULL;
+	temp->next = *stack;
+	(*stack)->prev = temp;
+	*stack = (*stack)->next;
+	(*stack)->prev->next = NULL;
+	(*stack)->prev = NULL;
 }
 
 /**
@@ -76,19 +76,19 @@ void rotl(stack_t **stack, __attribute__((unused)) unsigned int ln)
  */
 void rotr(stack_t **stack, __attribute__((unused)) unsigned int ln)
 {
-  stack_t *temp;
+	stack_t *temp;
 
-  if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-    return;
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+	return;
 
-  temp = *stack;
+	temp = *stack;
 
-  while (temp->next != NULL)
-    temp = temp->next;
+	while (temp->next != NULL)
+	temp = temp->next;
 
-  temp->next = *stack;
-  temp->prev->next = NULL;
-  temp->prev = NULL;
-  (*stack)->prev = temp;
-  (*stack) = temp;
+	temp->next = *stack;
+	temp->prev->next = NULL;
+	temp->prev = NULL;
+	(*stack)->prev = temp;
+	(*stack) = temp;
 }
