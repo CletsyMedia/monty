@@ -3,11 +3,11 @@
 
 /*#define _POSIX_C_SOURCE 200809L*/
 
-#include <unistd.h>   /* Provides access to POSIX operating system APIs */
-#include <stdlib.h>   /* Contains declarations for general-purpose functions */
-#include <ctype.h>    /* Provides character classification functions */
-#include <stdio.h>    /* Used for input and output operations */
-#include <string.h>   /* Declares functions for string manipulation */
+#include <unistd.h> /* Provides access to POSIX operating system APIs */
+#include <stdlib.h> /* Contains declarations for general-purpose functions */
+#include <ctype.h>  /* Provides character classification functions */
+#include <stdio.h>  /* Used for input and output operations */
+#include <string.h> /* Declares functions for string manipulation */
 #include <stdarg.h>
 #define _GNU_SOURCE
 
@@ -62,7 +62,7 @@ void calling_func(op_func, char *, char *, int, int);
 void prnt_top(stack_t **, unsigned int);
 void poping(stack_t **, unsigned int);
 void no_op(stack_t **, unsigned int);
-void swapping_nodes(stack_t **, unsigned int);
+void swapping(stack_t **, unsigned int);
 
 /*Math operations with nodes*/
 void addition(stack_t **, unsigned int);
@@ -77,9 +77,9 @@ void prnt_str(stack_t **, unsigned int);
 void rotl(stack_t **, unsigned int);
 
 /*Error hanlding*/
-void error(int err_code, ...);
-void much_error(int err_code, ...);
-void strng_error(int err_code, ...);
+void error(int error_code, ...);
+void errors(int error_code, ...);
+void strng_error(int error_code, ...);
 void rotr(stack_t **, unsigned int);
 
 #endif /* _MONTYCAL_H */
