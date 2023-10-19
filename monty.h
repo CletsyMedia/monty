@@ -93,7 +93,7 @@ void modulus(stack_t **, unsigned int);
 /*file operations*/
 void opening_file(char *file_name);
 
-int parsing_line(char *buffer, int line_number, int format);
+int parsing_line(char *buffs, int line_number, int format);
 
 void reading_file(FILE *);
 
@@ -101,4 +101,4 @@ int length_chars(FILE *);
 
 void finding_func(char *, char *, int, int);
 
-#endif /* _MONTYCAL_H */
+#endif /* _MONTY_H */

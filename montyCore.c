@@ -23,6 +23,7 @@ void adding_to_stack(stack_t **new_node,
 	if (head == NULL)
 	{
 		head = *new_node;
+
 		return;
 	}
 
@@ -50,12 +51,17 @@ void printing_stack(stack_t **stack, unsigned int line_number)
 	stack_t *temp;
 
 	(void)line_number;
+
 	if (stack == NULL)
+
 		exit(EXIT_FAILURE);
+
 	temp = *stack;
+
 	while (temp != NULL)
 	{
 		printf("%d\n", temp->n);
+
 		temp = temp->next;
 	}
 }
@@ -73,7 +79,7 @@ void poping(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 
-	if (stack == NULL || *stack == NULL)
+	if (!stack || !*stack)
 
 		errors(7, line_number);
 
@@ -99,7 +105,7 @@ void poping(stack_t **stack, unsigned int line_number)
  */
 void prnt_top(stack_t **stack, unsigned int line_number)
 {
-	if (stack == NULL || *stack == NULL)
+	if (!stack || !*stack)
 
 		errors(6, line_number);
 

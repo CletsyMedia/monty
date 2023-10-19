@@ -7,15 +7,19 @@
  */
 void multiply(stack_t **stack, unsigned int line_number)
 {
-	int add;
+	int prod;
 
-	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+	if (!stack || !*stack || !(*stack)->next)
 	errors(8, line_number, "mul");
 
 	(*stack) = (*stack)->next;
-	add = (*stack)->n * (*stack)->prev->n;
-	(*stack)->n = add;
+
+	prod = (*stack)->n * (*stack)->prev->n;
+
+	(*stack)->n = prod;
+
 	free((*stack)->prev);
+
 	(*stack)->prev = NULL;
 }
 
@@ -26,17 +30,23 @@ void multiply(stack_t **stack, unsigned int line_number)
  */
 void modulus(stack_t **stack, unsigned int line_number)
 {
-	int add;
+	int remainder;
 
-	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+	if (!stack || !*stack || !(*stack)->next)
 
 	errors(8, line_number, "mod");
 
 	if ((*stack)->n == 0)
+
 	errors(9, line_number);
+
 	(*stack) = (*stack)->next;
-	add = (*stack)->n % (*stack)->prev->n;
-	(*stack)->n = add;
+
+	remainder = (*stack)->n % (*stack)->prev->n;
+
+	(*stack)->n = remainder;
+
 	free((*stack)->prev);
+
 	(*stack)->prev = NULL;
 }

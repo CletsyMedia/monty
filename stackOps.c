@@ -15,6 +15,7 @@ stack_t *creating_node(int n)
 	stack_t *node;
 
 	node = malloc(sizeof(stack_t));
+
 	if (node == NULL)
 	error(4);
 

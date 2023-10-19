@@ -9,12 +9,15 @@ void prnt_char(stack_t **stack, unsigned int line_number)
 {
 	int ansi;
 
-	if (stack == NULL || *stack == NULL)
+	if (!stack || !*stack)
+
 	strng_error(11, line_number);
 
 	ansi = (*stack)->n;
 	if (ansi < 0 || ansi > 127)
+
 	strng_error(10, line_number);
+
 	printf("%c\n", ansi);
 }
 
@@ -28,7 +31,7 @@ void prnt_str(stack_t **stack, __attribute__((unused)) unsigned int ln)
 	stack_t *temp;
 	int ansi;
 
-	if (stack == NULL || *stack == NULL)
+	if (!stack || !*stack)
 	{
 	printf("\n");
 	return;
@@ -40,7 +43,9 @@ void prnt_str(stack_t **stack, __attribute__((unused)) unsigned int ln)
 	ansi = temp->n;
 	if (ansi <= 0 || ansi > 127)
 	break;
+
 	printf("%c", ansi);
+
 	temp = temp->next;
 	}
 	printf("\n");
@@ -55,7 +60,8 @@ void rotl(stack_t **stack, __attribute__((unused)) unsigned int ln)
 {
 	stack_t *temp;
 
-	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+	if (!stack || !*stack || !(*stack)->next)
+
 	return;
 
 	temp = *stack;
@@ -78,7 +84,8 @@ void rotr(stack_t **stack, __attribute__((unused)) unsigned int ln)
 {
 	stack_t *temp;
 
-	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+	if (!stack || !*stack || !(*stack)->next)
+
 	return;
 
 	temp = *stack;
