@@ -38,7 +38,7 @@ void prnt_char(stack_t **stack, unsigned int line_number)
  */
 void prnt_str(stack_t **stack, __attribute__((unused)) unsigned int ln)
 {
-	stack_t *temp;
+	stack_t *temp = *stack;
 	int ansi;
 
 	if (!stack || !(*stack))
@@ -47,7 +47,6 @@ void prnt_str(stack_t **stack, __attribute__((unused)) unsigned int ln)
 		return;
 	}
 
-	temp = *stack;
 	while (temp)
 	{
 		ansi = temp->n;
@@ -68,12 +67,12 @@ void prnt_str(stack_t **stack, __attribute__((unused)) unsigned int ln)
  */
 void rotl(stack_t **stack, __attribute__((unused)) unsigned int ln)
 {
-	stack_t *temp;
+	stack_t *temp = *stack;
+
 
 	if (!stack || !(*stack) || !(*stack)->next)
 		return;
 
-	temp = *stack;
 	while (temp->next != NULL)
 		temp = temp->next;
 
