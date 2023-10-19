@@ -1,4 +1,4 @@
-#include "montycal.h"
+#include "monty.h"
 
 /**
  * opening_file - Open and process a file for reading.

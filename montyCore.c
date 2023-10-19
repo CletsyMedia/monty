@@ -1,4 +1,4 @@
-#include "montycal.h"
+#include "monty.h"
 
 /**
  * adding_to_stack - Add a node to the stack.

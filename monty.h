@@ -1,5 +1,5 @@
-#ifndef _MONTYCAL_H
-#define _MONTYCAL_H
+#ifndef _MONTY_H
+#define _MONTY_H
 
 #define _GNU_SOURCE
 #include <unistd.h> /* Provides access to POSIX operating system APIs */
@@ -42,7 +42,6 @@ extern stack_t *head;
 
 typedef void (*op_func)(stack_t **, unsigned int);
 
-
 /*Stack operations*/
 stack_t *creating_node(int n);
 
@@ -79,7 +78,6 @@ void errors(int error_code, ...);
 void strng_error(int error_code, ...);
 
 void rotr(stack_t **, unsigned int);
-
 
 /*Math operations with nodes*/
 void addition(stack_t **, unsigned int);

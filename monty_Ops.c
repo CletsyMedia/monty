@@ -1,4 +1,4 @@
-#include "montycal.h"
+#include "monty.h"
 
 /**
  * multiply - Adds the top two elements of the stack.
