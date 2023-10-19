@@ -80,15 +80,15 @@ void strng_error(int error_code, ...);
 void rotr(stack_t **, unsigned int);
 
 /*Math operations with nodes*/
-void addition(stack_t **, unsigned int);
+void addition(stack_t **stack, unsigned int);
 
-void subtract(stack_t **, unsigned int);
+void subtract(stack_t **stack, unsigned int);
 
-void divide(stack_t **, unsigned int);
+void divide(stack_t **stack, unsigned int);
 
-void multiply(stack_t **, unsigned int);
+void multiply(stack_t **stack, unsigned int);
 
-void modulus(stack_t **, unsigned int);
+void modulus(stack_t **stack, unsigned int);
 
 /*file operations*/
 void opening_file(char *file_name);
