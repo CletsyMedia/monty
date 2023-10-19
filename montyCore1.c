@@ -26,23 +26,24 @@ void no_op(stack_t **stack, unsigned int line_number)
  */
 void swapping(stack_t **stack, unsigned int line_number)
 {
-	stack_t *temp;
+	stack_t *temp = *stack;
 
-	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+	if (!stack || !*stack || !(*stack)->next)
 		errors(8, line_number, "swap");
 
-	temp = (*stack)->next;
 	(*stack)->next = temp->next;
 
-	if (temp->next != NULL)
+	if (temp->next)
 		temp->next->prev = *stack;
 
 	temp->next = *stack;
+
 	(*stack)->prev = temp;
+
 	temp->prev = NULL;
+
 	*stack = temp;
 }
-
 /**
  * addition - Add the top two elements of the stack.
  *
@@ -85,17 +86,19 @@ void subtract(stack_t **stack, unsigned int line_number)
 {
 	int diff;
 
-	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+	if (!stack || !*stack || !(*stack)->next)
+	errors(8, line_number, "sub");
 
-		errors(8, line_number, "sub");
+	*stack = (*stack)->next;
 
-	(*stack) = (*stack)->next;
 	diff = (*stack)->n - (*stack)->prev->n;
+
 	(*stack)->n = diff;
+
 	free((*stack)->prev);
+
 	(*stack)->prev = NULL;
 }
-
 /**
  * divide - Divide the top two elements of the stack.
  *
@@ -111,16 +114,19 @@ void divide(stack_t **stack, unsigned int line_number)
 {
 	int quotient;
 
-	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+	if (!stack || !*stack || !(*stack)->next)
 		errors(8, line_number, "div");
 
 	if ((*stack)->n == 0)
 		errors(9, line_number);
 
 	(*stack) = (*stack)->next;
+
 	quotient = (*stack)->n / (*stack)->prev->n;
 
 	(*stack)->n = quotient;
+
 	free((*stack)->prev);
+
 	(*stack)->prev = NULL;
 }

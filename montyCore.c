@@ -16,7 +16,7 @@ void adding_to_stack(stack_t **new_node,
 {
 	stack_t *temp;
 
-	if (new_node == NULL || *new_node == NULL)
+	if (!new_node || !(*new_node))
 		exit(EXIT_FAILURE);
 
 	/* If the stack is empty, the new node becomes the head. */
@@ -25,15 +25,17 @@ void adding_to_stack(stack_t **new_node,
 		head = *new_node;
 		return;
 	}
+	else
+	{
+		/* If the stack is not empty, insert the new node as the new head. */
+		temp = head;
 
-	/* If the stack is not empty, insert the new node as the new head. */
-	temp = head;
+		head = *new_node;
 
-	head = *new_node;
+		head->next = temp;
 
-	head->next = temp;
-
-	temp->prev = head;
+		temp->prev = head;
+	}
 }
 
 /**
@@ -51,16 +53,15 @@ void printing_stack(stack_t **stack, unsigned int line_number)
 
 	(void)line_number;
 
-	if (stack == NULL)
-
-		exit(EXIT_FAILURE);
+	if (!stack)
+	exit(EXIT_FAILURE);
 
 	temp = *stack;
-	
-	while (temp != NULL)
+
+	while (temp)
 	{
-		printf("%d\n", temp->n);
-		temp = temp->next;
+	printf("%d\n", temp->n);
+	temp = temp->next;
 	}
 }
 
@@ -77,21 +78,19 @@ void poping(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 
-	if (stack == NULL || *stack == NULL)
+	if (!stack || !(*stack))
 
-		errors(7, line_number);
+	errors(7, line_number);
 
 	temp = *stack;
 
 	*stack = temp->next;
 
-	if (*stack != NULL)
-
-		(*stack)->prev = NULL;
+	if (*stack)
+	(*stack)->prev = NULL;
 
 	free(temp);
 }
-
 /**
  * prnt_top - Print the top node of the stack.
  *
@@ -103,9 +102,9 @@ void poping(stack_t **stack, unsigned int line_number)
  */
 void prnt_top(stack_t **stack, unsigned int line_number)
 {
-	if (stack == NULL || *stack == NULL)
+	if (!stack || !(*stack))
 
-		errors(6, line_number);
+	errors(6, line_number);
 
 	printf("%d\n", (*stack)->n);
 }
