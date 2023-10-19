@@ -1,66 +1,81 @@
 #include "monty.h"
 
 /**
- * prnt_char - Prints the Ascii value.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @line_number: Interger representing the line number of of the opcode.
+ * prnt_char - Prints the ASCII character from the stack.
+ *
+ * @stack: Pointer to the top node of the stack.
+ * @line_number: Line number of the opcode.
+ *
+ * Description:
+ * This function prints the ASCII character at the top of the stack and handles
+ * error cases for empty stack or invalid ASCII values.
  */
 void prnt_char(stack_t **stack, unsigned int line_number)
 {
 	int ansi;
 
-	if (stack == NULL || *stack == NULL)
-	strng_error(11, line_number);
+	if (!stack || !(*stack))
+	{
+		strng_error(11, line_number);
+		return;
+	}
 
 	ansi = (*stack)->n;
 	if (ansi < 0 || ansi > 127)
-	strng_error(10, line_number);
+	{
+		strng_error(10, line_number);
+		return;
+	}
+
 	printf("%c\n", ansi);
 }
 
 /**
- * prnt_str - Prints a string.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @ln: Interger representing the line number of of the opcode.
+ * prnt_str - Prints a string of ASCII characters from the stack.
+ *
+ * @stack: Pointer to the top node of the stack.
+ * @ln: Line number (unused).
  */
 void prnt_str(stack_t **stack, __attribute__((unused)) unsigned int ln)
 {
 	stack_t *temp;
 	int ansi;
 
-	if (stack == NULL || *stack == NULL)
+	if (!stack || !(*stack))
 	{
-	printf("\n");
-	return;
+		printf("\n");
+		return;
 	}
 
 	temp = *stack;
-	while (temp != NULL)
+	while (temp)
 	{
-	ansi = temp->n;
-	if (ansi <= 0 || ansi > 127)
-	break;
-	printf("%c", ansi);
-	temp = temp->next;
+		ansi = temp->n;
+		if (ansi <= 0 || ansi > 127)
+			break;
+
+		putchar(ansi);
+		temp = temp->next;
 	}
+
 	printf("\n");
 }
 
 /**
  * rotl - Rotates the first node of the stack to the bottom.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @ln: Interger representing the line number of of the opcode.
+ * @stack: Pointer to a pointer pointing to the top node of the stack.
+ * @ln: Line number (unused).
  */
 void rotl(stack_t **stack, __attribute__((unused)) unsigned int ln)
 {
 	stack_t *temp;
 
-	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-	return;
+	if (!stack || !(*stack) || !(*stack)->next)
+		return;
 
 	temp = *stack;
 	while (temp->next != NULL)
-	temp = temp->next;
+		temp = temp->next;
 
 	temp->next = *stack;
 	(*stack)->prev = temp;
@@ -71,24 +86,23 @@ void rotl(stack_t **stack, __attribute__((unused)) unsigned int ln)
 
 /**
  * rotr - Rotates the last node of the stack to the top.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @ln: Interger representing the line number of of the opcode.
+ * @stack: Pointer to a pointer pointing to the top node of the stack.
+ * @ln: Line number (unused).
  */
 void rotr(stack_t **stack, __attribute__((unused)) unsigned int ln)
 {
-	stack_t *temp;
+	stack_t *temp = *stack;
 
-	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-	return;
-
-	temp = *stack;
+	if (!stack || !(*stack) || !(*stack)->next)
+		return;
 
 	while (temp->next != NULL)
-	temp = temp->next;
+		temp = temp->next;
 
-	temp->next = *stack;
 	temp->prev->next = NULL;
 	temp->prev = NULL;
+
+	temp->next = *stack;
 	(*stack)->prev = temp;
-	(*stack) = temp;
+	*stack = temp;
 }
