@@ -1,16 +1,27 @@
 #include "montycal.h"
 
 /**
- * error - Prints appropiate error messages determined by their error code.
- * @error_code: The error codes are the following:
- * (1) => The user does not give any file or more than one file to the program.
- * (2) => The file provided is not a file that can be opened or read.
- * (3) => The file provided contains an invalid instruction.
- * (4) => When the program is unable to malloc more memory.
- * (5) => When the parameter passed to the instruction "push" is not an int.
- * (6) => When the stack it empty for pint.
- * (7) => When the stack it empty for pop.
- * (8) => When stack is too short for operation.
+ * error - Handle and display error messages based on specific error codes.
+ *
+ * This function receives an error code and, based on that code, generates
+ * and prints the appropriate error message. The error codes are as follows:
+ *
+ * (1) => Indicates that the user provided either no file or more than one
+ * file to the program.
+ * (2) => Indicates that the provided file cannot be opened or read.
+ * (3) => Indicates that the file contains an invalid instruction.
+ * (4) => Indicates a failure when attempting to allocate memory.
+ * (5) => Indicates an issue when the parameter passed to the "push"
+ * instruction is not an integer.
+ * (6) => Indicates an attempt to perform "pint" on an empty stack.
+ * (7) => Indicates an attempt to perform "pop" on an empty stack.
+ * (8) => Indicates an attempt to perform an operation on a stack that is
+ * too short.
+ *
+ * @error_code: The specific error code to determine the error message.
+ *
+ * Return: This function does not return a value, as it exits the program
+ * after displaying the error message.
  */
 void error(int error_code, ...)
 {
@@ -47,12 +58,21 @@ void error(int error_code, ...)
 }
 
 /**
- * errors - handles errors.
- * @error_code: The error codes are the following:
- * (6) => When the stack it empty for pint.
- * (7) => When the stack it empty for pop.
- * (8) => When stack is too short for operation.
- * (9) => Division by zero.
+ * errors - Handle and display specific error messages based on error codes.
+ *
+ * This function is responsible for processing various error codes and
+ * generating corresponding error messages. The error codes and their
+ * respective meanings are:
+ *
+ * (6) => Indicates an attempt to execute "pint" on an empty stack.
+ * (7) => Indicates an attempt to execute "pop" on an empty stack.
+ * (8) => Indicates that the stack is too short to perform an operation.
+ * (9) => Indicates a division by zero error.
+ *
+ * @error_code: The specific error code to determine the error message.
+ *
+ * Return: This function does not return a value; it exits the program after
+ * displaying the relevant error message.
  */
 void errors(int error_code, ...)
 {
@@ -88,10 +108,19 @@ void errors(int error_code, ...)
 }
 
 /**
- * strng_error - handles errors.
- * @error_code: The error codes are the following:
- * (10) ~> The number inside a node is outside ASCII bounds.
- * (11) ~> The stack is empty.
+ * strng_error - Handle and display specific error msgbased on error codes.
+ *
+ * This function is responsible for processing various error codes and
+ * generating corresponding error messages. The error codes and their
+ * respective meanings are:
+ *
+ * (10) => Indicates that the number inside a node is outside the ASCII bounds.
+ * (11) => Indicates an attempt to execute "pchar" on an empty stack.
+ *
+ * @error_code: The specific error code to determine the error message.
+ *
+ * Return: This function does not return a value; it exits the program after
+ * displaying the relevant error message.
  */
 void strng_error(int error_code, ...)
 {
